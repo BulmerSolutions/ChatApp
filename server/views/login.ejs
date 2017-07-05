@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Dylan Bulmer's Chat Server | Login</title>
+    <link rel='stylesheet' href="./static/css/ionicons.min.css" />
+    <style>
+      * {
+        margin: 0;
+        user-select: none;
+      }
+      
+      .wrapper {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+        background-size: 1800% 1800%;
+        -webkit-animation: rainbow 18s ease infinite;
+        -z-animation: rainbow 18s ease infinite;
+        -o-animation: rainbow 18s ease infinite;
+        animation: rainbow 18s ease infinite;
+      }
+      
+      @-webkit-keyframes rainbow {
+        0% {
+          background-position: 0% 82%
+        }
+        50% {
+          background-position: 100% 19%
+        }
+        100% {
+          background-position: 0% 82%
+        }
+      }
+      
+      @-moz-keyframes rainbow {
+        0% {
+          background-position: 0% 82%
+        }
+        50% {
+          background-position: 100% 19%
+        }
+        100% {
+          background-position: 0% 82%
+        }
+      }
+      
+      @-o-keyframes rainbow {
+        0% {
+          background-position: 0% 82%
+        }
+        50% {
+          background-position: 100% 19%
+        }
+        100% {
+          background-position: 0% 82%
+        }
+      }
+      
+      @keyframes rainbow {
+        0% {
+          background-position: 0% 82%
+        }
+        50% {
+          background-position: 100% 19%
+        }
+        100% {
+          background-position: 0% 82%
+        }
+      }
+      
+      .login {
+        width: 300px;
+        background: #FFFFFF;
+        left: calc(50% - 160px);
+        border-radius: 5px;
+        text-align: center;
+        position: absolute;
+        background-color: #eee;
+        overflow: hidden;
+      }
+      
+      .login span {
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 1.5em;
+        width: 50%;
+        margin: 0 -2px;
+        display: inline-block;
+        cursor: default;
+      }
+      
+      .login content {
+        display: block;
+        padding: 10px;
+        padding-bottom: 40px;
+        background-color: #fff;
+      }
+      
+      .login span.back {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 16px -6px inset;
+        background-color: #eee;
+        cursor: pointer;
+      }
+      
+      .login input {
+        border: 0;
+        text-align: left;
+        border-bottom: 2px solid #aaa;
+        padding: 5px 5px 0 5px;
+        margin: 2px 0;
+        font-size: 1em;
+        width: calc(80% - 10px);
+      }
+      
+      .login input:before,
+      .login input:after {
+        transition: all 0.4s ease-in-out;
+      }
+      
+      .login input:not([type="submit"]):hover,
+      .login input:not([type="submit"]):focus,
+      .login input:not([type="submit"]):active {
+        border-bottom: 2px solid #F7CA18;
+        outline: 0;
+        transition: all 0.4s ease-in-out;
+        0s;
+      }
+      
+      buttons {
+        display: block;
+        width: 100%;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <form action="" method="post" class="login">
+        <buttons>
+          <span id="btn-left" style="border-bottom-right-radius: 10px">Login</span>
+          <span id="btn-right" style="border-bottom-left-radius: 10px" class="back">Sign Up</span>
+        </buttons>
+        <content id="login">
+          <err style="color: #f00; font-size: 0.9em; text-align: center;">
+            <%= error %>
+          </err>
+          <br>
+          <input placeholder="Username" name="username" />
+          <input type="password" name="password" placeholder="Password" />
+          <br>
+          <input type="submit" style="padding: 10px 7px 6px 7px;box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);color: #757575;border-radius: 3px;margin-top: 10px;background: #fff;border: 0;height: 38px;vertical-align: top;width: calc(40% - 13px);cursor: pointer;font-size: 1em; text-align: center;"
+          value="Login" />
+          <a href='/login/google' style="color: #757575; text-decoration: none;">
+            <div style="display: inline-block;margin: auto;padding: 10px 7px 6px 7px;box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);color: #757575;font-family: sans-serif;border-radius: 3px;margin-top: 10px;width: calc(40% - 13px)">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg">
+                <g>
+                  <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+                  <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                  <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                  <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                  <path fill="none" d="M0 0h48v48H0z"></path>
+                </g>
+              </svg>
+              <name style="vertical-align: top;">Google</name>
+            </div>
+          </a>
+        </content>
+        <content id="signup">
+          <err style="color: #f00; font-size: 0.9em; text-align: center;">
+            <%= error %>
+          </err>
+          <br>
+          <br>
+          Sign up is being<br>
+          Developed!<br><br>
+        </content>
+      </form>
+    </div>
+    <script>     
+      var lt = document.getElementById('btn-left')
+      var rt = document.getElementById('btn-right')
+      var sf = document.getElementById('signup')
+      var lf = document.getElementById('login')
+      lf.setAttribute("style", "border-top-right-radius: 5px");
+      sf.setAttribute(
+        "style", 
+        "display: none; border-top-left-radius: 5px"
+      );
+      var onClick = function(e) {
+        let btn = e.target.id;
+        if (btn == 'btn-right') {
+          lt.setAttribute("class", "back");
+          rt.setAttribute("class", "");
+          sf.setAttribute(
+            "style", 
+            "display: block; border-top-left-radius: 5px"
+          );
+          lf.setAttribute(
+            "style", 
+            "display: none; border-top-right-radius: 5px"
+          );
+        } else {
+          lt.setAttribute("class", "");
+          rt.setAttribute("class", "back");
+          sf.setAttribute(
+            "style", 
+            "display: none; border-top-left-radius: 5px"
+          );
+          lf.setAttribute(
+            "style", 
+            "display: block; border-top-right-radius: 5px"
+          );
+        }
+      }
+      lt.addEventListener('click', onClick)
+      rt.addEventListener('click', onClick)
+
+      var form = document.getElementsByTagName('form')[0];
+      var b;
+      var update = function() {
+        b = form.getBoundingClientRect();
+        form.style.top = (window.innerHeight - b.height) / 2 + "px";
+        window.requestAnimationFrame(update);
+      }
+      update() 
+    </script>
+  </body>
+
+</html>
+
