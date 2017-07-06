@@ -37,3 +37,9 @@ For your mySQL server, you will need to have a database/schema pre-defined and t
 The sign in is very simple, just add your app's client id and client secret and every thing will work fine.
 
 If you need help setting this up, go to https://developers.google.com/identity/sign-in/web/devconsole-project and follow the steps to make the google app. The call back url is `http://localhost:5000/login/google/callback` unless you changed the port in the config file, if so change `5000` to the port to changed it to. If you are using a domain name, replace `localhost` with your domain name. Make sure that the port is forwarded to the computer serving the app.
+
+## The Application
+
+The app is run off of electron, to run the app, install electron and run `electron .` in the app directory. Electron will pick up the package.json file and run the app from it. 
+
+Soon the built applications will be posted to Google Drive to download for easier use.
