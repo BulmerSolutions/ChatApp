@@ -10,7 +10,7 @@ Here is a preview of the config file found in the server folder:
     {
       "port": 5000,
       "secret": "Your secret key for secure session",
-      "dataBase": {
+      "mysql": {
         "url": "",
         "user": "",
         "password": "",
