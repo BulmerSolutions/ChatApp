@@ -160,18 +160,18 @@ http.listen(port, function(){
 var DBisConnected = false;
 
 var db = mysql.createConnection({
-  host: data.database.url,
-  user: data.database.user,
-  password: data.database.password,
-  database: data.database.database
+  host: data.mysql.url,
+  user: data.mysql.user,
+  password: data.mysql.password,
+  database: data.mysql.database
 });
 
 db.connect(function(err) {
   if (err) {
     console.log("myQSL ERROR: " +err.code)
-    console.log("Please create database '"+data.database.database+"' in your mySQL server")
+    console.log("Please create database '"+data.mysql.database+"' in your mySQL server")
   } else {
-    if (data.database.database == ""){
+    if (data.mysql.database == ""){
       console.log("Please enter a database in the config.json file!")
     } else {
       console.log("Connection Established");
