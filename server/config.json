@@ -1,7 +1,7 @@
 {
   "port": 5000,
   "secret": "Your secret key for secure session",
-  "dataBase": {
+  "mysql": {
     "url": "",
     "user": "",
     "password": "",
