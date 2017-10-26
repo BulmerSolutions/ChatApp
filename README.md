@@ -24,7 +24,7 @@ Here is a preview of the config file found in the server folder:
 
 ### Server Settings
 
-You may change the port of the server from `5000` to what ever you would prefer it to be. The sercret **MUST** be a key that no one knows so your user's passwords can not be found and Socket IO chat is kept secure.
+You may change the port of the server from `5000` to what ever you would prefer it to be. The secret **MUST** be a key that no one knows so your user's passwords can not be found and Socket IO chat is kept secure.
 
 ### Database Setup
 
