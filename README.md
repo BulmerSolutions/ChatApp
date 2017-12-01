@@ -1,3 +1,7 @@
+___
+*Please note that the server is not secured yet. Next update will have a sign up and secured password storing with Bcrypt.*
+___
+
 # ChatApp
 This is a basic chat application which you and your friends can connect and start chatting!
 
