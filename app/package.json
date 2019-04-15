@@ -1,6 +1,12 @@
 {
-  "name"    : "chat-application",
-  "version" : "1.0.2",
-  "main"    : "main.js",
-  "description": "A chat application made by Dylan Bulmer"
+  "name": "chat-application",
+  "version": "1.0.2",
+  "main": "main.js",
+  "description": "A chat application made by Dylan Bulmer",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "dependencies": {
+    "electron": "^4.1.4"
+  }
 }
